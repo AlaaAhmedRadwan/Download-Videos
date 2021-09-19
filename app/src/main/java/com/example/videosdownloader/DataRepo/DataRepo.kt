@@ -145,10 +145,10 @@ class DataRepo {
         Log.i("data", jsonFileString!!)
 
         val gson = Gson()
-        val listPersonType = object : TypeToken<List<MainDataItem>>() {}.type
+        val listItemsType = object : TypeToken<List<MainDataItem>>() {}.type
 
-        var persons: List<MainDataItem> = gson.fromJson(jsonFileString, listPersonType)
-        livedata!!.postValue(persons)
+        var items: List<MainDataItem> = gson.fromJson(jsonFileString, listItemsType)
+        livedata!!.postValue(items)
     }
 
     fun getJsonDataFromAsset(context: Context, fileName: String): String? {
