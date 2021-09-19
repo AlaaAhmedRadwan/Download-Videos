@@ -44,8 +44,7 @@ class MainActivity : AppCompatActivity() {
         else { Permissions().RequestPermission(this) }
 
         val home = HomeFragment()
-        supportFragmentManager.beginTransaction().setCustomAnimations(R.anim.ttb, 0, 0, 0)
-            .replace(R.id.main_frame, home)
+        supportFragmentManager.beginTransaction()            .replace(R.id.main_frame, home)
             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             .commit()
 

@@ -14,7 +14,7 @@
   {
     "id": 3,
     "type": "PDF",
-    "url": "https://url-to-pdf-api.herokuapp.com/api/render?url=http://google.com&waitFor=1000\n\n",
+    "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
     "name": "PDF 3"
   },
   {

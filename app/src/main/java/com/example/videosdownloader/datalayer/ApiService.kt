@@ -25,16 +25,6 @@ interface APIServices {
     fun GetMainData():
             Observable<List<MainDataItem>>
 
-    @Streaming
-    @GET
-    fun downloadFileByUrl(@Url fileUrl: String?): Call<ResponseBody?>?
-
-
-    // Retrofit 2 GET request for rxjava
-    @Streaming
-    @GET
-    fun downloadFileByUrlRx(@Url fileUrl: String?): Observable<Response<ResponseBody>>
-
 }
 
 

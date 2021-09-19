@@ -41,13 +41,16 @@ class Main_Adapter(
     override fun onBindViewHolder(p0: CustomViewHolder, p1: Int) {
         p0.bind(context, data.get(p1))
         p0.binding.downloadedAlready.visibility = View.GONE
+        p0.binding.containerBar.visibility = View.GONE
 
+        /// Check if downloaded before
         try {
-           /// Check if downloaded before
+
             item_id = PreferenceHelper.retriveDownloaded()!!
             if (!PreferenceHelper.retriveDownloaded().isNullOrEmpty()) {
                 if (item_id.contains(p0.binding.data?.id.toString())) {
                     p0.binding.downloadedAlready.visibility = View.VISIBLE
+
                 } else {
                     p0.binding.downloadedAlready.visibility = View.GONE
                 }
@@ -64,33 +67,20 @@ class Main_Adapter(
                 try {
                     val uri = Uri.parse(data.get(p1).url)
                     p0.binding.simpleVideoView.setVideoURI(uri);
-                    p0.binding.progressBar.setVisibility(View.GONE)
-                    p0.binding.simpleVideoView.start()
-
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        p0.binding.simpleVideoView.pause()
-                        p0.binding.play.visibility = View.VISIBLE }, 3500)
+                    p0.binding.simpleVideoView.seekTo( 100 );
+                    p0.binding.play.visibility = View.VISIBLE
 
                     p0.binding.play.setOnClickListener {
                         p0.binding.simpleVideoView.start()
                         p0.binding.play.visibility = View.GONE
                     }
-
-
                 } catch (e: IOException) {
                     // presumably an exception is thrown the first time it gets 404 so put the error handling code here
                 }
-
-
-
-                p0.binding.simpleVideoView
+            p0.binding.simpleVideoView
                     .setOnCompletionListener(OnCompletionListener { mp ->
                         p0.binding.play.visibility = View.VISIBLE
-
-
                     })
-
-
 
         }else{
             p0.binding.progressBar.setVisibility(View.GONE)

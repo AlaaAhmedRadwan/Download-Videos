@@ -52,9 +52,6 @@ class DataRepo {
     }
 
 
-
-  ///////
-
     var downloading = false
 
     fun DownLoadFile(item_id: Int, url: String, context: Context, livedata: MutableLiveData<Float>, bindingstring: BindableString) {
@@ -132,6 +129,13 @@ class DataRepo {
             context.registerReceiver(br, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
         }
     }
+
+
+
+
+
+
+
 
 
   /// Get data From Json When Api false
