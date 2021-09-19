@@ -8,13 +8,13 @@
   {
     "id": 2,
     "type": "VIDEO",
-    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
     "name": "Video 2"
   },
   {
     "id": 3,
     "type": "PDF",
-    "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "url": "https://url-to-pdf-api.herokuapp.com/api/render?url=http://google.com&waitFor=1000\n\n",
     "name": "PDF 3"
   },
   {
@@ -32,13 +32,13 @@
   {
     "id": 6,
     "type": "VIDEO",
-    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
     "name": "Video 6"
   },
   {
     "id": 7,
     "type": "VIDEO",
-    "url": "https://storage.googleapis.com/exoplayer-test-media-1/mp4/frame-counter-one-hour.mp4",
+    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     "name": "Video 7"
   },
   {
@@ -62,13 +62,13 @@
   {
     "id": 11,
     "type": "VIDEO",
-    "url": "https://storage.googleapis.com/exoplayer-test-media-1/mp4/frame-counter-one-hour.mp4",
+    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     "name": "Video 11"
   },
   {
     "id": 12,
     "type": "VIDEO",
-    "url": "https://storage.googleapis.com/exoplayer-test-media-1/mp4/frame-counter-one-hour.mp4",
+    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
     "name": "Video 12"
   }
 ]

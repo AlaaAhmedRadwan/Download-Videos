@@ -25,17 +25,20 @@ class ClickHandler {
 
     fun Download(data:MainDataItem,context: Context,binding:BindableString) {
          var pDialog: SweetAlertDialog
-        pDialog = SweetAlertDialog(context, SweetAlertDialog.NORMAL_TYPE)
-        pDialog!!.setContentText("Confirm Download")
-        pDialog!!.setConfirmText("Confirm")
-        pDialog!!.setCancelText("Cancel")
-        pDialog!!.show()
-        pDialog.setCancelClickListener { pDialog.hide() }
-
-        pDialog.setConfirmClickListener {
-         (context as MainActivity).viewModel.DownLoadURL(data.id,data.url!!,context,binding)
-            pDialog.hide()
+        if (Permissions().CheckPermission(context)) {
+            pDialog = SweetAlertDialog(context, SweetAlertDialog.NORMAL_TYPE)
+            pDialog!!.setContentText("Confirm Download")
+            pDialog!!.setConfirmText("Confirm")
+            pDialog!!.setCancelText("Cancel")
+            pDialog!!.show()
+            pDialog.setCancelClickListener { pDialog.hide() }
+            pDialog.setConfirmClickListener {
+                (context as MainActivity).viewModel.DownLoadURL(data.id,data.url!!,context,binding)
+                pDialog.hide()
+            }
         }
+        else { Permissions().RequestPermission(context) }
+
 
     }
 
@@ -47,6 +50,9 @@ class ClickHandler {
         context.startActivity(intent)
 
 
+    }
+    fun Ok(bindingstring:BindableString){
+        bindingstring.visibility.set(8)
     }
     fun OpenVideoFolder(context: Context) {
         val intent = Intent(Intent.ACTION_GET_CONTENT)

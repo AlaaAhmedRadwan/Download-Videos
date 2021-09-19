@@ -115,14 +115,17 @@ class DataRepo {
 
                         if (cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)) == DownloadManager.STATUS_SUCCESSFUL) {
                             downloading = false
-                            bindingstring.visibility.set(8)
-
                         }
 
                         val progress = ((bytesDownloaded * 100L) / bytesTotal)
                         bindingstring.value.set(progress.toInt())
+                        if (progress.toInt() == 100){
+                            bindingstring.downloaded_text_visibility.set(0)
+
+                        }
                         cursor.close()
-                        bindingstring.updateDownloadStatusVisibility(0)
+
+
                     }
                 }
             }

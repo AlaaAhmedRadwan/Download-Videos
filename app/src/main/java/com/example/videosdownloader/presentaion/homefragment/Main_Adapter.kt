@@ -40,6 +40,7 @@ class Main_Adapter(
 
     override fun onBindViewHolder(p0: CustomViewHolder, p1: Int) {
         p0.bind(context, data.get(p1))
+        p0.binding.downloadedAlready.visibility = View.GONE
 
         try {
            /// Check if downloaded before

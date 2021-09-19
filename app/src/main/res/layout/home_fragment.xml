@@ -31,7 +31,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -70,58 +69,7 @@
             app:layout_constraintGuide_percent="1" />
 
 
-        <View
-            android:id="@+id/blacview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/black"
-            android:alpha="0.7"
-            android:visibility="gone"
-           />
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/container_bar"
-    android:layout_width="match_parent"
-    android:layout_height="500dp"
-    app:layout_constraintBottom_toTopOf="@+id/guide2"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:visibility="gone"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
-        android:background="@color/white"
-        android:layout_height="50dp"
-        android:adjustViewBounds="true"
-        android:padding="5dp"
-        android:scaleType="centerCrop"
-        app:corner_radius="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:percentage="0"
-        android:max="100"
-        android:minHeight="50dp"
-        android:minWidth="200dp"
-        android:progress="1"
-        android:progressBackgroundTint="@android:color/darker_gray"
-        android:progressTint="@color/colorPrimary" />
 
-
-
-    <TextView
-        android:id="@+id/textViewHorizontalProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar"
-        app:layout_constraintRight_toRightOf="@+id/progress_bar"
-        app:layout_constraintLeft_toLeftOf="@+id/progress_bar"
-        android:text="0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

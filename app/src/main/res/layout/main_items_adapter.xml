@@ -30,7 +30,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         android:layoutDirection="ltr"
+        android:layoutDirection="ltr"
         >
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -50,11 +50,33 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/black"
-            app:layout_constraintHeight_percent="0.83"
             app:layout_constraintBottom_toTopOf="@id/guide3"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name">
+
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pdf_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> listener.Open_PDF(Context,data)}"
+                android:src="@drawable/pdf_image"
+                android:visibility="@{data.type.equals(`PDF`) ? 0 : 8}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <VideoView
@@ -66,8 +88,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/play"
                 android:layout_width="60dp"
@@ -78,33 +98,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/simpleVideoView"
                 app:layout_constraintStart_toStartOf="@+id/simpleVideoView"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-
-                android:id="@+id/pdf_image"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:visibility="@{data.type.equals(`PDF`) ? 0 : 8}"
-                android:onClick="@{() -> listener.Open_PDF(Context,data)}"
-                android:src="@drawable/pdf_icon"
-                app:layout_constraintHeight_percent="0.26"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -164,6 +157,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_bar"
             android:layout_width="match_parent"
@@ -204,9 +198,22 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-               />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                />
 
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ok"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cancel"
+                android:visibility="@{bindingadater.downloaded_text_visibility}"
+                android:onClick="@{() -> listener.Ok(bindingadater)}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <View
